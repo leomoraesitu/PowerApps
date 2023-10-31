@@ -1,0 +1,272 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://brazil-001.azure-apim.net/apim/googlecalendar" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="GoogleAgenda" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Google Agenda">O Google Agenda permite que você organize sua agenda e compartilhe eventos com colegas de trabalho e amigos. Com o calendário online gratuito do Google, é fácil acompanhar sua agenda diária.</doc>
+  <grammars>
+    <jsonTypes targetNamespace="https://brazil-001.azure-apim.net/apim/googlecalendar" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <array typeRef="CalendarListEntry" name="CalendarList_items_def" />
+      <object name="CalendarList">
+        <property name="items" typeRef="CalendarList_items_def" />
+      </object>
+      <string name="CalendarListEntry_id_def" />
+      <string name="CalendarListEntry_summary_def" />
+      <string name="CalendarListEntry_description_def" />
+      <string name="CalendarListEntry_location_def" />
+      <string name="CalendarListEntry_timeZone_def" />
+      <object name="CalendarListEntry">
+        <property name="id" type="string" />
+        <property name="summary" type="string" />
+        <property name="description" type="string" />
+        <property name="location" type="string" />
+        <property name="timeZone" type="string" />
+      </object>
+      <array typeRef="ResponseEvent" name="CalendarEventList_items_def" />
+      <object name="CalendarEventList">
+        <property name="items" typeRef="CalendarEventList_items_def" />
+      </object>
+      <array typeRef="ResponseEventWithActionType" name="CalendarEventChangedList_items_def" />
+      <object name="CalendarEventChangedList">
+        <property name="items" typeRef="CalendarEventChangedList_items_def" />
+      </object>
+      <string name="ResponseEvent_summary_def" />
+      <dateTimeString name="ResponseEvent_start_def" />
+      <dateTimeString name="ResponseEvent_end_def" />
+      <string name="ResponseEvent_description_def" />
+      <string name="ResponseEvent_location_def" />
+      <string name="ResponseEvent_status_def" />
+      <string name="ResponseEvent_htmlLink_def" />
+      <string name="ResponseEvent_id_def" />
+      <string name="ResponseEvent_attendees_def" />
+      <string name="ResponseEvent_creator_def" />
+      <string name="ResponseEvent_organizer_def" />
+      <dateTimeString name="ResponseEvent_created_def" />
+      <dateTimeString name="ResponseEvent_updated_def" />
+      <boolean name="ResponseEvent_endTimeUnspecified_def" />
+      <object name="ResponseEvent">
+        <property name="summary" type="string" />
+        <property name="start" typeRef="ResponseEvent_start_def" />
+        <property name="end" typeRef="ResponseEvent_end_def" />
+        <property name="description" type="string" />
+        <property name="location" type="string" />
+        <property name="status" type="string" />
+        <property name="htmlLink" type="string" />
+        <property name="id" type="string" />
+        <property name="attendees" type="string" />
+        <property name="creator" type="string" />
+        <property name="organizer" type="string" />
+        <property name="created" typeRef="ResponseEvent_created_def" />
+        <property name="updated" typeRef="ResponseEvent_updated_def" />
+        <property name="endTimeUnspecified" type="boolean" />
+      </object>
+      <string name="RequestEvent_summary_def" />
+      <dateTimeString name="RequestEvent_start_def" />
+      <dateTimeString name="RequestEvent_end_def" />
+      <string name="RequestEvent_description_def" />
+      <string name="RequestEvent_location_def" />
+      <string name="RequestEvent_attendees_def" />
+      <string name="RequestEvent_status_def" />
+      <boolean name="RequestEvent_isAllDay_def" />
+      <object name="RequestEvent">
+        <property name="summary" type="string" />
+        <property name="start" typeRef="RequestEvent_start_def" />
+        <property name="end" typeRef="RequestEvent_end_def" />
+        <property name="description" type="string" />
+        <property name="location" type="string" />
+        <property name="attendees" type="string" />
+        <property name="status" type="string" />
+        <property name="isAllDay" type="boolean" />
+      </object>
+      <string name="PatchEvent_summary_def" />
+      <dateTimeString name="PatchEvent_start_def" />
+      <dateTimeString name="PatchEvent_end_def" />
+      <string name="PatchEvent_description_def" />
+      <string name="PatchEvent_location_def" />
+      <string name="PatchEvent_attendees_def" />
+      <string name="PatchEvent_status_def" />
+      <boolean name="PatchEvent_isAllDay_def" />
+      <object name="PatchEvent">
+        <property name="summary" type="string" />
+        <property name="start" typeRef="PatchEvent_start_def" />
+        <property name="end" typeRef="PatchEvent_end_def" />
+        <property name="description" type="string" />
+        <property name="location" type="string" />
+        <property name="attendees" type="string" />
+        <property name="status" type="string" />
+        <property name="isAllDay" type="boolean" />
+      </object>
+      <string name="ResponseEventWithActionType_actionType_def" />
+      <string name="ResponseEventWithActionType_summary_def" />
+      <dateTimeString name="ResponseEventWithActionType_start_def" />
+      <dateTimeString name="ResponseEventWithActionType_end_def" />
+      <string name="ResponseEventWithActionType_description_def" />
+      <string name="ResponseEventWithActionType_location_def" />
+      <string name="ResponseEventWithActionType_status_def" />
+      <string name="ResponseEventWithActionType_htmlLink_def" />
+      <string name="ResponseEventWithActionType_id_def" />
+      <string name="ResponseEventWithActionType_attendees_def" />
+      <string name="ResponseEventWithActionType_creator_def" />
+      <string name="ResponseEventWithActionType_organizer_def" />
+      <dateTimeString name="ResponseEventWithActionType_created_def" />
+      <dateTimeString name="ResponseEventWithActionType_updated_def" />
+      <boolean name="ResponseEventWithActionType_endTimeUnspecified_def" />
+      <object name="ResponseEventWithActionType">
+        <property name="actionType" type="string" />
+        <property name="summary" type="string" />
+        <property name="start" typeRef="ResponseEventWithActionType_start_def" />
+        <property name="end" typeRef="ResponseEventWithActionType_end_def" />
+        <property name="description" type="string" />
+        <property name="location" type="string" />
+        <property name="status" type="string" />
+        <property name="htmlLink" type="string" />
+        <property name="id" type="string" />
+        <property name="attendees" type="string" />
+        <property name="creator" type="string" />
+        <property name="organizer" type="string" />
+        <property name="created" typeRef="ResponseEventWithActionType_created_def" />
+        <property name="updated" typeRef="ResponseEventWithActionType_updated_def" />
+        <property name="endTimeUnspecified" type="boolean" />
+      </object>
+      <object name="Object" />
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://brazil-001.azure-apim.net/apim/googlecalendar">
+    <resource path="/{connectionId}/users/me/calendarList">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="GET" id="ListCalendars" actionName="ListCalendars" visibility="advanced" siena:isDeprecated="false">
+        <doc title="Listar calendários&#xA;Esta operação é usada para listar todos os calendários em sua conta do Google." />
+        <request>
+          <param style="query" name="minAccessRole" type="xs:string">
+            <doc title="A função de acesso mínimo que os usuários devem ter para exibir calendários." />
+            <option value="freeBusyReader" />
+            <option value="reader" />
+            <option value="writer" />
+            <option value="owner" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:CalendarList" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/calendars/{calendarId}/events">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="calendarId" type="xs:string" required="true">
+        <doc title="ID exclusiva do calendário do qual obter eventos." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="ListEvents" actionName="ListEvents" visibility="advanced" siena:isDeprecated="false">
+        <doc title="Listar os eventos em um calendário&#xA;Esta operação é usada para retornar a primeira página de eventos arbitrariamente ordenados no calendário selecionado." />
+        <request>
+          <param style="query" name="timeMin" type="xs:string">
+            <doc title="Formato de hora: aaaa-MM-ddTHH:mm:ss.fffZ (2016-07-20T08:00:00.000Z)." />
+          </param>
+          <param style="query" name="timeMax" type="xs:string">
+            <doc title="Formato da hora: aaaa-MM-ddTHH:mm:ss.fffZ (2016-07-20T09:00:59.000Z)." />
+          </param>
+          <param style="query" name="q" type="xs:string">
+            <doc title="Termos de pesquisa de texto para localizar eventos que correspondem a esses termos em todos os campos" />
+          </param>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:CalendarEventList" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/calendars/{calendarId}/events">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="calendarId" type="xs:string" required="true">
+        <doc title="ID exclusiva do calendário do qual obter eventos." />
+      </param>
+      <method siena:requiresAuthentication="true" name="POST" id="CreateEvent" actionName="CreateEvent" visibility="important" siena:isDeprecated="false">
+        <doc title="Criar um evento&#xA;Esta operação é usada para criar um evento em um calendário específico." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="summary" path="/summary" type="xs:string" />
+            <param style="plain" name="start" path="/start" type="service:RequestEvent_start_def" required="true" />
+            <param style="plain" name="end" path="/end" type="service:RequestEvent_end_def" required="true" />
+            <param style="plain" name="description" path="/description" type="xs:string" />
+            <param style="plain" name="location" path="/location" type="xs:string" />
+            <param style="plain" name="attendees" path="/attendees" type="xs:string" />
+            <param style="plain" name="status" path="/status" type="xs:string">
+              <option value="confirmed" />
+              <option value="tentative" />
+              <option value="cancelled" />
+            </param>
+            <param style="plain" name="isAllDay" path="/isAllDay" type="xs:boolean" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEvent" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/calendars/{calendarId}/events/{eventId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="calendarId" type="xs:string" required="true">
+        <doc title="ID exclusiva do calendário do qual obter eventos." />
+      </param>
+      <param style="template" name="eventId" type="xs:string" required="true">
+        <doc title="ID exclusiva do evento a ser obtido." />
+      </param>
+      <method siena:requiresAuthentication="true" name="GET" id="GetEvent" actionName="GetEvent" visibility="advanced" siena:isDeprecated="false">
+        <doc title="Obter um evento&#xA;Esta operação é usada para obter os detalhes de um evento específico em um calendário." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEvent" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/calendars/{calendarId}/events/{eventId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="calendarId" type="xs:string" required="true">
+        <doc title="ID exclusiva do calendário do qual obter eventos." />
+      </param>
+      <param style="template" name="eventId" type="xs:string" required="true">
+        <doc title="ID exclusiva do evento a ser atualizado." />
+      </param>
+      <method siena:requiresAuthentication="true" name="DELETE" id="DeleteEvent" actionName="DeleteEvent" visibility="advanced" siena:isDeprecated="false">
+        <doc title="Excluir um evento&#xA;Esta operação é usada para excluir um evento de um calendário." />
+        <request />
+        <response>
+          <representation mediaType="application/json" element="service:Object" />
+        </response>
+      </method>
+    </resource>
+    <resource path="/{connectionId}/calendars/{calendarId}/events/{eventId}">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <param style="template" name="calendarId" type="xs:string" required="true">
+        <doc title="ID exclusiva do calendário do qual obter eventos." />
+      </param>
+      <param style="template" name="eventId" type="xs:string" required="true">
+        <doc title="ID exclusiva do evento a ser obtido." />
+      </param>
+      <method siena:requiresAuthentication="true" name="PATCH" id="UpdateEvent" actionName="UpdateEvent" visibility="advanced" siena:isDeprecated="false">
+        <doc title="Atualizar um evento&#xA;Esta operação é usada para atualizar um evento existente em um calendário." />
+        <request>
+          <representation mediaType="application/json">
+            <param style="plain" name="summary" path="/summary" type="xs:string" />
+            <param style="plain" name="start" path="/start" type="service:PatchEvent_start_def" />
+            <param style="plain" name="end" path="/end" type="service:PatchEvent_end_def" />
+            <param style="plain" name="description" path="/description" type="xs:string" />
+            <param style="plain" name="location" path="/location" type="xs:string" />
+            <param style="plain" name="attendees" path="/attendees" type="xs:string" />
+            <param style="plain" name="status" path="/status" type="xs:string">
+              <option value="confirmed" />
+              <option value="tentative" />
+              <option value="cancelled" />
+            </param>
+            <param style="plain" name="isAllDay" path="/isAllDay" type="xs:boolean" />
+          </representation>
+        </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseEvent" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="shared_googlecalendar" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>

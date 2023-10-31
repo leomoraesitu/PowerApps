@@ -1,0 +1,446 @@
+"Detalhes As screen.'phoneDetailViewLayout_ver3.0'":
+    LoadingSpinnerColor: =RGBA(202, 80, 16, 1)
+
+    "'Barra de tarefas detalhes' As rectangle":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    "'Ícone volta galeria' As icon.ChevronLeft":
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Lista, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="Voltar para a lista"
+        Width: =88
+        ZIndex: =2
+
+    "'Ícone editar detalhes' As icon.Edit":
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisplayMode: =If(DataSourceInfo([@Tabela1], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Edit
+        OnSelect: =EditForm('Janela nova música');Navigate('Nova Música', ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="Editar esse item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    "'Ícone excluir detalhes' As icon.Trash":
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisplayMode: =If(!IsBlank(Galeria.Selected) && DataSourceInfo([@Tabela1], DataSourceInfo.DeletePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Trash
+        OnSelect: =Remove([@Tabela1], Galeria.Selected); If (IsEmpty(Errors([@Tabela1], Galeria.Selected)), Back())
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="Excluir esse item"
+        Width: =88
+        X: =Parent.Width - 'Ícone editar detalhes'.Width - Self.Width
+        ZIndex: =4
+
+    "'Título detalhes' As label":
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        Height: =88
+        Size: =27
+        Text: ="Detalhes"
+        Width: =Parent.Width - Self.X - 'Ícone excluir detalhes'.Width - 'Ícone editar detalhes'.Width
+        Wrap: =false
+        X: =80
+        ZIndex: =5
+
+    "'Janela detalhes' As formViewer":
+        BorderColor: =RGBA(166, 166, 166, 1)
+        DataSource: =[@Tabela1]
+        Height: =Parent.Height - 'Janela detalhes'.Y
+        Item: =Galeria.Selected
+        Width: =Parent.Width
+        Y: ='Barra de tarefas detalhes'.Y + 'Barra de tarefas detalhes'.Height
+        ZIndex: =6
+
+        "'Cartão bloco' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Bloco"
+            Default: =ThisItem.Bloco
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabela1],DataSourceInfo.DisplayName,"Bloco")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =317
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            "'Título bloco' As label":
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =31
+                PaddingLeft: =0
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =92
+                Wrap: =false
+                X: =113
+                Y: =16
+                ZIndex: =1
+
+            "'Nome bloco' As label":
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Height: =25
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =80
+                X: =119
+                Y: =59
+                ZIndex: =2
+
+        "'Cartão sequência' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Sequência"
+            Default: =ThisItem.Sequência
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabela1],DataSourceInfo.DisplayName,"Sequência")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =88
+            Required: =false
+            Width: =323
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            "'Título sequência' As label":
+                Align: =Align.Center
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                PaddingLeft: =0
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =11
+                ZIndex: =1
+
+            "'Nome sequência' As label":
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Height: =29
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =187
+                X: =68
+                Y: =59
+                ZIndex: =2
+
+        "'Cartão Música' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Música"
+            Default: =ThisItem.Música
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabela1],DataSourceInfo.DisplayName,"Música")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =102
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            "'Título música' As label":
+                Align: =Align.Center
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                PaddingLeft: =0
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            "'Nome música' As label":
+                Align: =Align.Center
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =48
+                ZIndex: =2
+
+        "'Cartão interprete' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Interprete"
+            Default: =ThisItem.Interprete
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabela1],DataSourceInfo.DisplayName,"Interprete")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            "'Título interprete' As label":
+                Align: =Align.Center
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                PaddingLeft: =0
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            "'Nome interprete' As label":
+                Align: =Align.Center
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =58
+                ZIndex: =2
+
+        "'Cartão miniatura' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Image"
+            Default: =ThisItem.Image
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabela1],DataSourceInfo.DisplayName,"Image")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =398
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            "'Miniatura cartão' As image":
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =320
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: =ThisItem.Image
+                ImagePosition: =ImagePosition.Fill
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =320
+                X: =160
+                Y: =39
+                ZIndex: =1
+
+        "'Cartão tom' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Tom"
+            Default: =ThisItem.Tom
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabela1],DataSourceInfo.DisplayName,"Tom")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =114
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            "'Título tom' As label":
+                Align: =Align.Center
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                PaddingLeft: =0
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            "'Nome tom' As label":
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =58
+                ZIndex: =2
+
+    "'Botão partitura' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(202, 80, 16, 1), -10%)
+        OnSelect: =Navigate(Partituras)
+        PressedBorderColor: =ColorFade(RGBA(202, 80, 16, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: =DataSourceInfo([@Tabela1],DataSourceInfo.DisplayName,"Partitura")
+        Tooltip: ="Abrir link"
+        Width: =280
+        X: =180
+        Y: =926
+        ZIndex: =7
+

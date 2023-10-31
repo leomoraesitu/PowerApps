@@ -1,0 +1,196 @@
+Calendário As screen:
+    LoadingSpinnerColor: =RGBA(202, 80, 16, 1)
+
+    Icon8 As icon.CalendarBlank:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(202, 80, 16, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =635
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.CalendarBlank
+        OnSelect: |-
+            =Launch("https://www.instagram.com/p/CgNYTxfunG-/?igshid=YmMyMTA2M2Y=")
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =354
+        X: =143
+        Y: =251
+        ZIndex: =1
+
+    "'Barra de tarefas galeria_1' As rectangle":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =2
+
+    "'Título app_1' As label":
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(58, 58, 58, 0)
+        Font: =Font.'Segoe UI'
+        Height: =88
+        Size: =27
+        Text: ="Agenda"
+        Width: =272
+        Wrap: =false
+        X: =184
+        ZIndex: =3
+
+    Rectangle1_5 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(202, 80, 16, 1)
+        FocusedBorderThickness: =4
+        HoverFill: =RGBA(202, 80, 16, 1)
+        PressedFill: =RGBA(202, 80, 16, 1)
+        Width: =640
+        Y: =1036
+        ZIndex: =4
+
+    Icon4_5 As icon.Home:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Home)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =71
+        Y: =1054
+        ZIndex: =5
+
+    Label3_15 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="início"
+        Width: =80
+        X: =51
+        Y: =1093
+        ZIndex: =6
+
+    Label3_16 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="contatos"
+        Width: =100
+        X: =204
+        Y: =1093
+        ZIndex: =7
+
+    Icon5_5 As icon.Phonebook:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Phonebook
+        OnSelect: =Navigate(Contatos)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =234
+        Y: =1054
+        ZIndex: =8
+
+    Icon6_5 As icon.Message:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Message
+        OnSelect: =Navigate(Mensagens)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =402
+        Y: =1054
+        ZIndex: =9
+
+    Label3_17 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="mensagens"
+        Width: =117
+        X: =363
+        Y: =1093
+        ZIndex: =10
+
+    Image5_5 As image:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =3
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =67
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='LOGO CLIMINHA QUADRADO'
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =67
+        X: =539
+        Y: =1052
+        ZIndex: =11
+

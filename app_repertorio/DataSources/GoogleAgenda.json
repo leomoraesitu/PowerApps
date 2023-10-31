@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_googlecalendar",
+    "Name": "GoogleAgenda",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

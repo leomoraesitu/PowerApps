@@ -1,0 +1,366 @@
+Partituras As screen:
+    LoadingSpinnerColor: =RGBA(202, 80, 16, 1)
+
+    "'Barra de tarefas partituras' As rectangle":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    "'Ícone volta detalhes' As icon.ChevronLeft":
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Detalhes, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="Voltar para a lista"
+        Width: =88
+        ZIndex: =2
+
+    "'Título barra partituras' As label":
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Segoe UI'
+        Height: =88
+        Size: =27
+        Text: ="Partituras"
+        Width: =484
+        Wrap: =false
+        X: =70
+        ZIndex: =3
+
+    "'Botão partitura Bloco 01' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(202, 80, 16, 1), -10%)
+        OnSelect: |-
+            =Launch("https://1drv.ms/b/s!Aoc-nEaPemxVok2YkIjoNj7YRs59?e=WHgZzR")
+        PressedBorderColor: =ColorFade(RGBA(202, 80, 16, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Bloco 01"
+        Width: =280
+        X: =178
+        Y: =139
+        ZIndex: =4
+
+    "'Botão partitura Bloco 02' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(202, 80, 16, 1), -10%)
+        OnSelect: |-
+            =Launch("https://1drv.ms/b/s!Aoc-nEaPemxVok_qMXRh-DKizGzH?e=VohLkT")
+        PressedBorderColor: =ColorFade(RGBA(202, 80, 16, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Bloco 02"
+        Width: =280
+        X: =178
+        Y: =296
+        ZIndex: =5
+
+    "'Botão partitura Bloco 03' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(202, 80, 16, 1), -10%)
+        OnSelect: |-
+            =Launch("https://1drv.ms/b/s!Aoc-nEaPemxVok54IKdVQg0oMfD5?e=cQJCdI")
+        PressedBorderColor: =ColorFade(RGBA(202, 80, 16, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Bloco 03"
+        Width: =280
+        X: =182
+        Y: =453
+        ZIndex: =6
+
+    "'Botão partitura Bloco 04' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(202, 80, 16, 1), -10%)
+        OnSelect: |-
+            =Launch("https://1drv.ms/b/s!Aoc-nEaPemxVolB__YfJZ3_BdXqz?e=zHLNhd")
+        PressedBorderColor: =ColorFade(RGBA(202, 80, 16, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Bloco 04"
+        Width: =280
+        X: =178
+        Y: =610
+        ZIndex: =7
+
+    "'Botão partitura Bloco 05' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(202, 80, 16, 1), -10%)
+        OnSelect: |-
+            =Launch("https://1drv.ms/b/s!Aoc-nEaPemxVolLH3RmGhuvJLIiP?e=UFdwEg")
+        PressedBorderColor: =ColorFade(RGBA(202, 80, 16, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Bloco 05"
+        Width: =280
+        X: =178
+        Y: =767
+        ZIndex: =8
+
+    "'Botão partitura Bloco 06' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(202, 80, 16, 1), -10%)
+        OnSelect: |-
+            =Launch("https://1drv.ms/b/s!Aoc-nEaPemxVolGVe5l8QilkYyfu?e=Ju3I2U")
+        PressedBorderColor: =ColorFade(RGBA(202, 80, 16, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Bloco 06"
+        Width: =280
+        X: =178
+        Y: =925
+        ZIndex: =9
+
+    Rectangle1_3 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(202, 80, 16, 1)
+        FocusedBorderThickness: =4
+        HoverFill: =RGBA(202, 80, 16, 1)
+        PressedFill: =RGBA(202, 80, 16, 1)
+        Width: =640
+        Y: =1036
+        ZIndex: =10
+
+    Icon4_3 As icon.Home:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Home)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =71
+        Y: =1054
+        ZIndex: =11
+
+    Label3_9 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="início"
+        Width: =80
+        X: =51
+        Y: =1093
+        ZIndex: =12
+
+    Label3_10 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="contatos"
+        Width: =100
+        X: =204
+        Y: =1093
+        ZIndex: =13
+
+    Icon5_3 As icon.Phonebook:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Phonebook
+        OnSelect: =Navigate(Contatos)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =234
+        Y: =1054
+        ZIndex: =14
+
+    Icon6_3 As icon.Message:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Message
+        OnSelect: =Navigate(Mensagens)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =402
+        Y: =1054
+        ZIndex: =15
+
+    Label3_11 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="mensagens"
+        Width: =117
+        X: =363
+        Y: =1093
+        ZIndex: =16
+
+    Image5_3 As image:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =3
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =67
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='LOGO CLIMINHA QUADRADO'
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =67
+        X: =539
+        Y: =1052
+        ZIndex: =17
+

@@ -1,0 +1,7 @@
+{
+  "DataEntityMetadataJson": {
+    "Tabela1": "{\"name\":\"Tabela1\",\"title\":\"Tabela1\",\"x-ms-permission\":\"read-write\",\"schema\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"Bloco\":{\"type\":\"string\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Bloco\"},\"Sequência\":{\"type\":\"string\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Sequência\"},\"Música\":{\"type\":\"string\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Música\"},\"Interprete\":{\"type\":\"string\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Interprete\"},\"Tom\":{\"type\":\"string\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Tom\"},\"Image\":{\"type\":\"string\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Image\"},\"Partitura\":{\"type\":\"string\",\"x-ms-keyOrder\":0,\"x-ms-keyType\":\"none\",\"x-ms-sort\":\"none\",\"title\":\"Partitura\"},\"__PowerAppsId__\":{\"type\":\"string\",\"x-ms-keyOrder\":1,\"x-ms-keyType\":\"primary\",\"x-ms-sort\":\"none\",\"x-ms-permission\":\"read-only\",\"title\":\"Row id\"}}}}}"
+  },
+  "EntityName": "Tabela1",
+  "TableName": "Tabela1"
+}

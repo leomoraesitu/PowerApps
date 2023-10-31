@@ -1,0 +1,421 @@
+"Lista As screen.'phoneBrowseLayout_ver3.0'":
+    LoadingSpinnerColor: =RGBA(202, 80, 16, 1)
+
+    "'Barra de tarefas galeria' As rectangle":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(221, 79, 14, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    "Galeria As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Height: =Parent.Height - Self.Y
+        Items: =SortByColumns(Search([@Tabela1], 'Caixa de busca'.Text, "Sequência","Bloco","Image"), "Sequência", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate(Detalhes, ScreenTransition.None)
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =Min(168, Self.Height - 60)
+        Width: =Parent.Width
+        Y: ='Caixa de busca'.Y + 'Caixa de busca'.Height
+        ZIndex: =1
+
+        Miniatura As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =128
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =ThisItem.Image
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        "'Sequência galeria' As label":
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.Sequência
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Miniatura.Width - 104
+            X: =Miniatura.X + Miniatura.Width + 16
+            Y: =16
+            ZIndex: =2
+
+        "'Música galeria' As label":
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Música
+            VerticalAlign: =VerticalAlign.Top
+            Width: ='Sequência galeria'.Width
+            X: ='Sequência galeria'.X
+            Y: ='Sequência galeria'.Y + 'Sequência galeria'.Height + 2
+            ZIndex: =3
+
+        "'Interprete galeria' As label":
+            Color: =RGBA(51, 51, 51, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Segoe UI'
+            Height: =Self.Size * 4
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =16
+            Text: =ThisItem.Interprete
+            VerticalAlign: =VerticalAlign.Top
+            Width: ='Música galeria'.Width
+            X: ='Música galeria'.X
+            Y: ='Música galeria'.Y + 'Música galeria'.Height + 4
+            ZIndex: =4
+
+        "'Ícone ir detalhes' As icon.ChevronRight":
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(202, 80, 16, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(220, 220, 220, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =60
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            TabIndex: =0
+            Tooltip: ="Exibir detalhes do item"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =5
+
+        "'Divisória galeria' As rectangle":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =6
+
+    "'Título app' As label":
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(58, 58, 58, 0)
+        Font: =Font.'Segoe UI'
+        Height: =88
+        Size: =27
+        Text: ="Repertório"
+        Width: =272
+        Wrap: =false
+        X: =103
+        ZIndex: =2
+
+    "'Ícone atualizar' As icon.Reload":
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        Height: =88
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@Tabela1])
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="Atualizar lista"
+        Width: =88
+        X: =Parent.Width - 'Ícone nova música'.Width - 'Ícone classificar'.Width - Self.Width
+        ZIndex: =3
+
+    "'Ícone classificar' As icon.ArrowsUpDown":
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        Height: =88
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        PaddingBottom: =26
+        PaddingLeft: =26
+        PaddingRight: =26
+        PaddingTop: =26
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: =If(SortDescending1, "Classificar lista em ordem alfabética inversa", "Classificar lista em ordem alfabética")
+        Width: =88
+        X: =Parent.Width - 'Ícone nova música'.Width - Self.Width
+        ZIndex: =4
+
+    "'Ícone nova música' As icon.Add":
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisplayMode: =If(DataSourceInfo([@Tabela1], DataSourceInfo.CreatePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Add
+        OnSelect: =NewForm('Janela nova música');Navigate('Nova Música', ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: ="Criar novo item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =5
+
+    "'Caixa de busca' As text":
+        BorderColor: =RGBA(166, 166, 166, 1)
+        BorderThickness: =2
+        Color: =RGBA(51, 51, 51, 1)
+        Default: =""
+        DelayOutput: =true
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =68
+        HintText: ="Itens de busca"
+        HoverBorderColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverColor: =RGBA(51, 51, 51, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PaddingLeft: =70
+        PressedBorderColor: =RGBA(202, 80, 16, 1)
+        PressedColor: =RGBA(51, 51, 51, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =21
+        Width: =Parent.Width
+        Y: ='Barra de tarefas galeria'.Height
+        ZIndex: =6
+
+    "'Ícone busca' As icon.Search":
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(202, 80, 16, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =Self.Width
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Search
+        PaddingBottom: =14
+        PaddingLeft: =14
+        PaddingRight: =14
+        PaddingTop: =14
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Tooltip: ="Pesquisar"
+        Width: ='Caixa de busca'.Height
+        X: ='Caixa de busca'.X
+        Y: ='Caixa de busca'.Y
+        ZIndex: =7
+
+    Divisória As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        Height: =2
+        Width: =Parent.Width
+        Y: ='Caixa de busca'.Y + 'Caixa de busca'.Height
+        ZIndex: =8
+
+    Rectangle1_2 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(202, 80, 16, 1)
+        FocusedBorderThickness: =4
+        HoverFill: =RGBA(202, 80, 16, 1)
+        PressedFill: =RGBA(202, 80, 16, 1)
+        Width: =640
+        Y: =1036
+        ZIndex: =9
+
+    Icon4_2 As icon.Home:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Home
+        OnSelect: =Navigate(Home)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =71
+        Y: =1054
+        ZIndex: =10
+
+    Label3_6 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="início"
+        Width: =80
+        X: =51
+        Y: =1093
+        ZIndex: =11
+
+    Label3_7 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="contatos"
+        Width: =100
+        X: =204
+        Y: =1093
+        ZIndex: =12
+
+    Icon5_2 As icon.Phonebook:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Phonebook
+        OnSelect: =Navigate(Contatos)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =234
+        Y: =1054
+        ZIndex: =13
+
+    Icon6_2 As icon.Message:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Message
+        OnSelect: =Navigate(Contatos)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(202, 80, 16, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =402
+        Y: =1054
+        ZIndex: =14
+
+    Label3_8 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        Size: =15
+        Text: ="mensagens"
+        Width: =117
+        X: =363
+        Y: =1093
+        ZIndex: =15
+
+    Image5_2 As image:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =3
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =67
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='LOGO CLIMINHA QUADRADO'
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =67
+        X: =539
+        Y: =1052
+        ZIndex: =16
+

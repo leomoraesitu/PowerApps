@@ -1,0 +1,99 @@
+{
+  "1cfe6a52-0eb2-4603-89c4-a9e9be588213": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneDrive",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1586/1.0.1586.2912/onedrive/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedrive",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "c332b9f8-0c79-4d2e-ba41-2cb767ef16b3"
+    ],
+    "id": "1cfe6a52-0eb2-4603-89c4-a9e9be588213"
+  },
+  "876a7dd9-cb84-4624-a61b-6673f8ca8bae": {
+    "appActions": [
+      "SearchUser",
+      "UserPhoto_V2"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuários do Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1587/1.0.1587.2924/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuáriosdoOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "876a7dd9-cb84-4624-a61b-6673f8ca8bae"
+  },
+  "c332b9f8-0c79-4d2e-ba41-2cb767ef16b3": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1570/1.0.1570.2764/excel/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excel",
+      "parameterHints": {
+        "1cfe6a52-0eb2-4603-89c4-a9e9be588213": {
+          "value": "fileSource"
+        }
+      },
+      "parameterHintsV2": {
+        "fileSource": {
+          "value": "1cfe6a52-0eb2-4603-89c4-a9e9be588213"
+        }
+      }
+    },
+    "datasets": {
+      "556C7A8F469C3E87!4440": {
+        "dataSources": {
+          "Tabela1": {
+            "tableName": "Tabela1"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Tabela1"
+    ],
+    "dependencies": {
+      "fileSource": "1cfe6a52-0eb2-4603-89c4-a9e9be588213"
+    },
+    "dependents": [],
+    "id": "c332b9f8-0c79-4d2e-ba41-2cb767ef16b3"
+  },
+  "cbd9442d-c119-4c42-b92d-afb077815a8e": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Google Agenda",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1571/1.0.1571.2769/googlecalendar/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_googlecalendar",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "GoogleAgenda"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "cbd9442d-c119-4c42-b92d-afb077815a8e"
+  }
+}
