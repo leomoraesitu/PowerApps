@@ -4,3 +4,6 @@ Repositório desenvolvido com projetos do **Microsoft Power Platform** das trilh
 
 ## 💻 Tecnologias utilizadas:
 - <img src="https://github.com/leomoraesitu/PowerApps/assets/128606856/05541a35-8864-4429-9c45-76f92a2454f7" width="20"> Microsoft Power Apps
+
+## 📋 Projetos:
+- 🎸[App de Repertório para Bandas](https://github.com/leomoraesitu/PowerApps/tree/master/app_repertorio)
